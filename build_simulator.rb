@@ -3,7 +3,11 @@
 puts "Starting building process of 🐿..."
 intervals_range = (10..20).to_a
 chosen_interval = intervals_range.sample
-puts "Assembling 🐿 for #{chosen_interval} seconds..."
+
+is_fat = (ENV['IS_FAT'] || 0) ? "Fat" : "Skinny"
+color = ENV['COLOR'] || 'Brown'
+
+puts "Assembling [#{is_fat}, #{color}] 🐿 for #{chosen_interval} seconds..."
 $stdout.flush
 sleep chosen_interval
 
