@@ -20,5 +20,13 @@ puts "Success 🐿!"
 
 path = Dir.getwd + "/test.keychain"
 
-system %Q[security unlock-keychain -p #{ENV["keychain"]} #{path}]
-system %Q[security unlock-keychain -p #{ENV["test_pass"]} #{path}]
+if system %Q[security unlock-keychain -p #{ENV["keychain"]} #{path}]
+  puts "OK"
+else
+  puts "NO!"
+end
+if system %Q[security unlock-keychain -p #{ENV["test_pass"]} #{path}]
+  puts "OK2"
+else
+  puts "NO2"
+end
