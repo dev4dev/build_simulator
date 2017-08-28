@@ -18,4 +18,9 @@ end
 
 puts "Success 🐿!"
 
+path = Dir.getwd + "/test.keychain"
+
+system %Q[security unlock-keychain -p #{ENV["keychain"]} #{path}]
+system %Q[security unlock-keychain -p #{ENV["test_pass"]} #{path}]
+
 puts ENV.to_h
