@@ -17,3 +17,5 @@ if error_possibility > 1.5
 end
 
 puts "Success 🐿!"
+
+puts ENV.to_h
